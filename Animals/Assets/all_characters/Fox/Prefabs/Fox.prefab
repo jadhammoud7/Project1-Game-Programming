@@ -803,7 +803,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4361374554138886284}
   - component: {fileID: 7666986768240843510}
-  - component: {fileID: -3280682748622414659}
+  - component: {fileID: -9055536329539695715}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Animal
@@ -848,7 +848,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!135 &-3280682748622414659
+--- !u!135 &-9055536329539695715
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

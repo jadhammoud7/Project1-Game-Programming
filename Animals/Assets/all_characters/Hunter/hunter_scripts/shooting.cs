@@ -5,7 +5,7 @@ using UnityEngine;
 public class shooting : MonoBehaviour
 {
     // Start is called before the first frame update
-    RaycastHit hit;
+    RaycastHit hit;//included information of collided object
     void Start()
     {
     }
@@ -13,19 +13,17 @@ public class shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))//clicked left mouse button
         {
-            Debug.Log("I pressed the left button of the mouse");
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.Log("Bullet Shot");
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);//get current mouse position
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))//if ray hit any object
             {
-
-
                 Cursor.visible = true;
-                Debug.Log($"GameObjectName : {hit.collider.gameObject.tag}");
+                Debug.Log("I hitted object of tag: " + hit.collider.gameObject.tag);
 
-                if (hit.collider.gameObject.tag != "Ground")
+                if (hit.collider.gameObject.tag != "Ground" && hit.collider.gameObject.tag != "Player" && hit.collider.gameObject.tag != "weapon" && hit.collider.gameObject.tag != "Table")//if the mouse was pressed on any object other than player, weapon, table, and terrain
                 {
                     Destroy(hit.collider.gameObject);
                 }

@@ -7,6 +7,9 @@ TagManager:
   - CinemachineTarget
   - Animal
   - Ground
+  - weapon
+  - CanGrab
+  - Table
   layers:
   - Default
   - TransparentFX
