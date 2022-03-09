@@ -8,6 +8,7 @@ public class Target : MonoBehaviour
 
     public void TakeDamage(float amount){
         health -= amount;
+        Debug.Log("health of "+ gameObject.name +" is now: " + health);
         if(health <= 0f){
             Die();
         }
@@ -15,6 +16,7 @@ public class Target : MonoBehaviour
 
     void Die(){
         Destroy(gameObject);
+        Debug.Log(gameObject.name + " has died");
     }
     // Start is called before the first frame update
     void Start()
