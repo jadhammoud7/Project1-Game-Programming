@@ -9,6 +9,7 @@ public class shooting : MonoBehaviour
     public RectTransform image;
     void Start()
     {
+        //image.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

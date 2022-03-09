@@ -1213,7 +1213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 129599297655528145, guid: 4d5402bea9fcbd14aa8d54be6c6e855f, type: 3}
       propertyPath: m_Name
-      value: muzzleFlash
+      value: FireFlash
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d5402bea9fcbd14aa8d54be6c6e855f, type: 3}
@@ -1447,6 +1447,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8762286023885395322, guid: 9c489a8547f4d9e4387da15a4ff82c81, type: 3}
   m_PrefabInstance: {fileID: 1296406107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &792616755 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 129599297655528146, guid: 4d5402bea9fcbd14aa8d54be6c6e855f, type: 3}
+  m_PrefabInstance: {fileID: 581434318}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &809576459
 GameObject:
@@ -7212,6 +7217,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7890788999950545268, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 809576460}
+    - target: {fileID: 7890788999950545268, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: equipPosition
       value: 
       objectReference: {fileID: 1438128428}
@@ -7519,6 +7528,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   equipPosition: {fileID: 0}
   distance: 10
+  image: {fileID: 0}
 --- !u!1001 &1449809230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8747,7 +8757,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fpsCam: {fileID: 1889865797}
-  fireFlash: {fileID: 0}
+  fireFlash: {fileID: 792616755}
 --- !u!4 &1964412875 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4361374554138886284, guid: 9fedecbd1aa68924b816f15cb97e611a, type: 3}

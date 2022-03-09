@@ -9,10 +9,12 @@ public class WeaponPick : MonoBehaviour
     GameObject currentWeapon;
     GameObject wp;
     bool CanGrap;
+    public RectTransform image;
     // Start is called before the first frame update
     void Start()
     {
-        
+        image.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -55,6 +57,8 @@ public class WeaponPick : MonoBehaviour
         currentWeapon.transform.parent = equipPosition;
         currentWeapon.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
         currentWeapon.GetComponent<Rigidbody>().isKinematic = true;
+        image.gameObject.SetActive(true);
+
     }
 
     public void Drop(){
