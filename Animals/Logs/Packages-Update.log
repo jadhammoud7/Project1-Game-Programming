@@ -1,0 +1,8 @@
+
+=== Thu Mar 10 00:13:51 2022
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.render-pipelines.high-definition@10.5.0
