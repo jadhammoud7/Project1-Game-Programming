@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\com.unity.editorcoroutines\Editor\EditorCoroutine.cs" />
      <Compile Include="Packages\com.unity.editorcoroutines\Editor\EditorWindowCoroutineExtension.cs" />
+     <Compile Include="Packages\com.unity.editorcoroutines\Editor\EditorCoroutine.cs" />
      <Compile Include="Packages\com.unity.editorcoroutines\Editor\EditorWaitForSeconds.cs" />
      <Compile Include="Packages\com.unity.editorcoroutines\Editor\EditorCoroutineUtility.cs" />
      <None Include="Packages\com.unity.editorcoroutines\Editor\Unity.EditorCoroutines.Editor.asmdef" />

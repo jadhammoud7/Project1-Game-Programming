@@ -37,16 +37,16 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Packages\com.unity.settings-manager\Editor\Settings.cs" />
+     <Compile Include="Packages\com.unity.settings-manager\Editor\ISettingsRepository.cs" />
+     <Compile Include="Packages\com.unity.settings-manager\Editor\UserSettings.cs" />
+     <Compile Include="Packages\com.unity.settings-manager\Editor\SettingsGUILayout.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\UserSettingsProvider.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\PackageSettingsRepository.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\Attributes.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\UserSetting.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\SettingsDictionary.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\UserSettingsRepository.cs" />
-     <Compile Include="Packages\com.unity.settings-manager\Editor\ISettingsRepository.cs" />
-     <Compile Include="Packages\com.unity.settings-manager\Editor\UserSettings.cs" />
      <Compile Include="Packages\com.unity.settings-manager\Editor\ValueWrapper.cs" />
-     <Compile Include="Packages\com.unity.settings-manager\Editor\SettingsGUILayout.cs" />
      <None Include="Packages\com.unity.settings-manager\Editor\Unity.Settings.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

@@ -36,9 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\ByteBuffer.cs" />
      <Compile Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\Instruction.cs" />
      <Compile Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\MethodBodyReader.cs" />
+     <Compile Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\ByteBuffer.cs" />
      <Compile Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\Disassembler.cs" />
      <None Include="Packages\com.unity.testtools.codecoverage\Editor\CoverageFormats\OpenCover\Mono.Reflection\Reflection.asmdef" />
     <Reference Include="UnityEngine">

@@ -40,11 +40,11 @@
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\CustomPropertyProviderSettings.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\EditorPreferencesProvider.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\TypeOptionsSettings.cs" />
-     <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\AssemblyOptionsSettings.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettingsProvider.cs" />
-     <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\ScriptReferenceResolverSettings.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\EditorPreferencesProviderView.cs" />
      <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\BackupSettings.cs" />
+     <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\AssemblyOptionsSettings.cs" />
+     <Compile Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\ProjectSettings\ScriptReferenceResolverSettings.cs" />
      <None Include="Packages\com.unity.visualscripting\Editor\SettingsProvider\Unity.VisualScripting.SettingsProvider.Editor.asmdef" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.2.8f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
