@@ -9,17 +9,14 @@ public class Gun : MonoBehaviour
     [Tooltip("Range for damage around the enemy")]
     public float range = 100f;
     [Tooltip("Speed of the bullet fire")]
-    public float fireRate = 15f;
-    [Tooltip("Force of the bullet on the target")]
+
     public float impactForce = 30f;
     [Tooltip("First Person Shooter camera")]
     public Camera fpsCam;
     [Tooltip("The particle system of the bullets effect on the top of gun")]
     public ParticleSystem fireFlash;
     [Tooltip("Effect of the bullet on the target, which is a partcile system")]
-    public GameObject impactEffect;
-    [Tooltip("Seperate time between bullet fire shots")]
-    private float nextTimeToFire = 0f;
+    public GameObject bullets;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +25,7 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && Time.time >= nextTimeToFire){//if pressed left mouse button
-            nextTimeToFire = Time.time + 1f/fireRate;//take a break time between one bullet and another
+        if(Input.GetButtonDown("Fire1")){//if pressed left mouse button
             Shoot();//enter shoot method
         }
     }
@@ -46,8 +42,9 @@ public class Gun : MonoBehaviour
             if(hit.rigidbody != null){
                 hit.rigidbody.AddForce(- hit.normal * impactForce);//add force on the rigid body of the target
             }
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+            GameObject bulleteffect = Instantiate(bullets, hit.point, Quaternion.LookRotation(hit.normal));//he direction of the bullet
+            //will be straight;
+            Destroy(bulleteffect, 2f);
         }
     }
 }
