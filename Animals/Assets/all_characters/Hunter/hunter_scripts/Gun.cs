@@ -17,6 +17,9 @@ public class Gun : MonoBehaviour
     public ParticleSystem fireFlash;
     [Tooltip("Effect of the bullet on the target, which is a partcile system")]
     public GameObject bullets;
+
+    //ammo script will be used here
+    public ammo_script ammo_count;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +34,12 @@ public class Gun : MonoBehaviour
     }
     void Shoot()//when shooting
     {
+        
         fireFlash.Play();//play the particle system 
         RaycastHit hit;//get info about the hit object
         if(Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
+            Debug.Log(hit.transform.tag);
             Target target = hit.transform.GetComponent<Target>();
             if(target != null){
                 target.TakeDamage(damage);//enter take damage 
@@ -42,9 +47,6 @@ public class Gun : MonoBehaviour
             if(hit.rigidbody != null){
                 hit.rigidbody.AddForce(- hit.normal * impactForce);//add force on the rigid body of the target
             }
-            GameObject bulleteffect = Instantiate(bullets, hit.point, Quaternion.LookRotation(hit.normal));//he direction of the bullet
-            //will be straight;
-            Destroy(bulleteffect, 2f);
         }
     }
 }

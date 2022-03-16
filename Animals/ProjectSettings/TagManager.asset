@@ -13,6 +13,10 @@ TagManager:
   - House
   - Hunter
   - haha
+  - Ammo
+  - smg_ammo
+  - AR_ammo
+  - shotgun_ammo
   layers:
   - Default
   - TransparentFX

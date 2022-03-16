@@ -41,7 +41,7 @@ public class WeaponPick : MonoBehaviour
         if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, distance))
         {
             if(hit.transform.tag == "weapon"){
-                Debug.Log("I can grab it");
+                //Debug.Log("I can grab it");
                 CanGrap = true;
                 wp = hit.transform.gameObject;
             }

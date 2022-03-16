@@ -17,11 +17,11 @@ public class health_bar : MonoBehaviour
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
-        Debug.Log(fill.color);
+        Debug.Log(slider.value);
     }
     void Start()
     {
-        Debug.Log(fill.color);
+       setMaxHealth(50f); 
     }
 
 }
