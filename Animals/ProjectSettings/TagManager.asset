@@ -12,6 +12,7 @@ TagManager:
   - Table
   - House
   - Hunter
+  - haha
   layers:
   - Default
   - TransparentFX
