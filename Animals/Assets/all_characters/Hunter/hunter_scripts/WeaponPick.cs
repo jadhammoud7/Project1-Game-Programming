@@ -6,9 +6,10 @@ public class WeaponPick : MonoBehaviour
 {
     public Transform equipPosition;
     public float distance = 10f;
-    GameObject currentWeapon;
+    public GameObject currentWeapon;
     GameObject wp;
     bool CanGrap;
+    int grabbed=0;
     public RectTransform image;
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,7 @@ public class WeaponPick : MonoBehaviour
         currentWeapon.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
         currentWeapon.GetComponent<Rigidbody>().isKinematic = true;
         image.gameObject.SetActive(true);
+        grabbed=1;
 
     }
 
@@ -65,5 +67,10 @@ public class WeaponPick : MonoBehaviour
         currentWeapon.transform.parent = null;
         currentWeapon.GetComponent<Rigidbody>().isKinematic = false;
         currentWeapon = null;
+        grabbed=0;
     }
+public int getGrabbed(){
+    return grabbed;
+}
+
 }
