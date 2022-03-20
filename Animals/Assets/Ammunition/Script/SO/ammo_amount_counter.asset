@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7557ad636d92c06488b067d0a17f6c3c, type: 3}
   m_Name: ammo_amount_counter
   m_EditorClassIdentifier: 
+  ammo_counter: 3

@@ -15,7 +15,6 @@ public class WeaponPick : MonoBehaviour
     void Start()
     {
         image.gameObject.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -69,8 +68,8 @@ public class WeaponPick : MonoBehaviour
         currentWeapon = null;
         grabbed=0;
     }
-public int getGrabbed(){
-    return grabbed;
-}
+    public int getGrabbed(){
+        return grabbed;
+    }
 
 }

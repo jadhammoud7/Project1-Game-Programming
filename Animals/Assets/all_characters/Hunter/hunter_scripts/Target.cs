@@ -19,47 +19,46 @@ public class Target : MonoBehaviour
     public int impactForce = 30;
     [Tooltip("The health bar is the script of the health bar which is above the animal")]
     public health_bar health_bar1;
-
-    public Ammo_bar ammo_incremting;
-
-    //the ammo script will be usef here
-    public void TakeDamage(int amount)
-    {
-        currentHealth -= amount;
-        health_bar1.setHealth(currentHealth);//set the current health of the animal to be the new value
-        Debug.Log("health of " + gameObject.name + " is now: " + currentHealth);
-        if (currentHealth == 0)//when the health is 0, then the animal dies
-        {
-            Destroy(gameObject);
-        }
-    }
+    [Tooltip("The Scriptable Object ammo_amount that container ammo_counter")]
+    [SerializeField]
+    ammo_amount ammos_amount;
+   
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))//if left button was pressed
         {
+            int ammos_available = ammos_amount.ammo_counter;//gets the number of ammos
             //check if there is ammo
-            //if (ammo_incremting.getNumber_of_Ammo() > 0)//if the nb of ammo is greater than 0 then he can simply shoot
-            //{
+            if (ammos_available > 0)//if the nb of ammo is greater than 0 then he can simply shoot
+            {
                 RaycastHit hit;//get info about the hit object
-                Ray ray = Camera.main.ScreenPointToRay(AimPoint.transform.position);
-                if (Physics.Raycast(ray, out hit, range))
+                Ray ray = Camera.main.ScreenPointToRay(AimPoint.transform.position);//point the ray towards the centered aim image
+                if (Physics.Raycast(ray, out hit, range))//if the ray hits an available hit object
                 {
                     if (hit.transform.tag == "Animal")
                     {
-                        Debug.Log("Current ammo is: "+ammo_incremting.getNumber_of_Ammo());
-
-                        ammo_incremting.setAmountNummber(ammo_incremting.getNumber_of_Ammo()-1);
-                        TakeDamage(damage);//enter take damage 
+                        ammos_amount.ammo_counter--;
+                        currentHealth -= damage;
+                        health_bar1.setHealth(currentHealth);//set the current health of the animal to be the new value
+                        Debug.Log("health of " + gameObject.name + " is now: " + currentHealth);
+                        if (currentHealth == 0)//when the health is 0, then the animal dies
+                        {
+                            Destroy(gameObject);
+                        }
                     }
                     if (hit.rigidbody != null)
                     {
                         hit.rigidbody.AddForce(-hit.normal * impactForce);//add force on the rigid body of the target
                     }
                 }
-             //}//else if(ammo_incremting.getNumber_of_Ammo()<=0){
-            //     Debug.Log("Out of ammo");
-            // }
-
+            }
+            else
+            {
+                Debug.Log("Out of ammo");
+            }
         }
+    }
+    void Start() {
+        currentHealth = Maxhealth;    
     }
 }

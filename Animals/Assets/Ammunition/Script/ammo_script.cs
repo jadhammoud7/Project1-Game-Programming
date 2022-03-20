@@ -15,7 +15,7 @@ public class ammo_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0,1,0);
+        transform.Rotate(0,1,0);//rotate the ammo vertically
 
     }
     // private void OnTriggerEnter(Collider other) {
