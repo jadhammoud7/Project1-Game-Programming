@@ -17,6 +17,7 @@ TagManager:
   - smg_ammo
   - AR_ammo
   - shotgun_ammo
+  - Fox1
   layers:
   - Default
   - TransparentFX

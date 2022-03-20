@@ -11,8 +11,7 @@ public class Gun : MonoBehaviour
     [Tooltip("The weapon pick script")]
     public WeaponPick weaponPick;
 
-    //ammo script will be used here
-    public ammo_script ammo_count;
+    
     // Start is called before the first frame update
     void Start()
     {

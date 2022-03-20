@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
     [Tooltip("The max health of this animal is 50, and it is fixed.")]
     public int Maxhealth = 50;
     [Tooltip("The current health of the animal, and that will decrease when the animal is shot by a gun.")]
-    public int currentHealth=50;
+    public int currentHealth = 50;
     [Tooltip("The aim point which is the center of the screen")]
     public RectTransform AimPoint;
     [Tooltip("Damage health for the target enemy")]
@@ -20,6 +20,9 @@ public class Target : MonoBehaviour
     [Tooltip("The health bar is the script of the health bar which is above the animal")]
     public health_bar health_bar1;
 
+    public Ammo_bar ammo_incremting;
+
+    //the ammo script will be usef here
     public void TakeDamage(int amount)
     {
         currentHealth -= amount;
@@ -30,18 +33,33 @@ public class Target : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    void Update(){
-        if(Input.GetMouseButton(0)){
-            RaycastHit hit;//get info about the hit object
-            Ray ray = Camera.main.ScreenPointToRay(AimPoint.transform.position);
-            if(Physics.Raycast(ray, out hit, range)){
-                if(hit.transform.tag == "Animal"){
-                    TakeDamage(damage);//enter take damage 
+    void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            //check if there is ammo
+            //if (ammo_incremting.getNumber_of_Ammo() > 0)//if the nb of ammo is greater than 0 then he can simply shoot
+            //{
+                RaycastHit hit;//get info about the hit object
+                Ray ray = Camera.main.ScreenPointToRay(AimPoint.transform.position);
+                if (Physics.Raycast(ray, out hit, range))
+                {
+                    if (hit.transform.tag == "Animal")
+                    {
+                        Debug.Log("Current ammo is: "+ammo_incremting.getNumber_of_Ammo());
+
+                        ammo_incremting.setAmountNummber(ammo_incremting.getNumber_of_Ammo()-1);
+                        TakeDamage(damage);//enter take damage 
+                    }
+                    if (hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForce(-hit.normal * impactForce);//add force on the rigid body of the target
+                    }
                 }
-                if(hit.rigidbody != null){
-                    hit.rigidbody.AddForce(- hit.normal * impactForce);//add force on the rigid body of the target
-                }
-            }
+             //}//else if(ammo_incremting.getNumber_of_Ammo()<=0){
+            //     Debug.Log("Out of ammo");
+            // }
+
         }
     }
 }
