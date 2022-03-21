@@ -26,7 +26,7 @@ public class Ammo_bar : MonoBehaviour
        //setMaxAmmo(25);//initial max value is 25
        //setAmountNummber(3);
     }
-        public int getNumber_of_Ammo(){
+    public int getNumber_of_Ammo(){
         return (int)slider.value;
     }
 }

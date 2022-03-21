@@ -25,8 +25,8 @@ public class ammo : MonoBehaviour
         
     }
 
-        private void OnTriggerEnter(Collider other) {
-         if(other.gameObject.tag=="Player"){
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag=="Player"){
             amount.ammo_counter+=this_ammo.ammo_amount;
             ammo_incremting.setAmountNumber(amount.ammo_counter);
             Debug.Log("amount of ammo now is: "+amount.ammo_counter);

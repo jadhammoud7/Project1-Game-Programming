@@ -22,6 +22,9 @@ public class health_bar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
         Debug.Log(slider.value);
     }
+    public int getCurrentHealth(){
+        return (int)slider.value;
+    }
     void Start()
     {
        setMaxHealth(50);//initial max value is 50
