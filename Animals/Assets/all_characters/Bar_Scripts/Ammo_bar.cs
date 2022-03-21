@@ -10,27 +10,23 @@ public class Ammo_bar : MonoBehaviour
 
     [Tooltip("The fill is the current color of the ammo bar that will be either green, yellow, or red according to the animal health")]
     public Image fill;
-
-    [Tooltip("The Scriptable Object ammo_amount that container ammo_counter")]
-    [SerializeField]
-    ammo_amount amount;
-    
     public void setMaxAmmo(int ammo_nb)//set the slider to the max value
     {
         slider.maxValue = ammo_nb;
+        slider.value =3;
+
     }
-    public void setAmountNumber()//set the slider to the current value of the health
+    public void setAmountNumber(int ammo_nb)//set the slider to the current value of the health
     {
-        slider.value = amount.ammo_counter;
+        slider.value = ammo_nb;
+        Debug.Log(slider.value);
     }
     void Start()
     {
-       setMaxAmmo(25);//Max ammos is 25
+       //setMaxAmmo(25);//initial max value is 25
+       //setAmountNummber(3);
     }
-    void Update(){
-        setAmountNumber();
-    }
-    public int getNumber_of_Ammo(){//returns number of ammos currently
+        public int getNumber_of_Ammo(){
         return (int)slider.value;
     }
 }
